@@ -27,7 +27,7 @@
 				<span class="text-8xl glow-red animate-pulse">🚀</span>
 			</div>
 			<h1 class="text-6xl md:text-7xl font-black text-white text-shadow-red mb-8 leading-tight">
-				<span class="gradient-red bg-clip-text text-transparent">Svelte</span>
+				<span class="gradient-red bg-clip-text text-white rounded-full px-2">Svelte</span>
 				<span class="text-white">Boilerplate</span>
 				<br>
 				<span class="text-red-400">Kit</span>

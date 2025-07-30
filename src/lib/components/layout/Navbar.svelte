@@ -14,11 +14,11 @@
 	}
 
 	const navItems = [
-		{ href: '/', label: 'Home', icon: '🏠' },
-		{ href: '/components', label: 'Components', icon: '🧩' },
-		{ href: '/forms', label: 'Forms', icon: '📝' },
-		{ href: '/dashboard', label: 'Dashboard', icon: '📊' },
-		{ href: '/about', label: 'About', icon: 'ℹ️' }
+		{ href: '/', label: 'Home'},
+		{ href: '/components', label: 'Components' },
+		{ href: '/forms', label: 'Forms',  },
+		{ href: '/dashboard', label: 'Dashboard' },
+		{ href: '/about', label: 'About' }
 	];
 </script>
 
@@ -28,7 +28,6 @@
 			<!-- Logo -->
 			<div class="flex items-center">
 				<a href="/" class="flex items-center space-x-3 group">
-					<span class="text-3xl glow-red group-hover:scale-110 transition-transform duration-200">🚀</span>
 					<span class="text-xl font-bold text-white text-shadow-red">
 						Svelte Kit
 					</span>
@@ -42,7 +41,6 @@
 						href={item.href}
 						class="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 text-shadow {$page.url.pathname === item.href ? 'gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg'}"
 					>
-						<span class="text-lg">{item.icon}</span>
 						<span>{item.label}</span>
 					</a>
 				{/each}
