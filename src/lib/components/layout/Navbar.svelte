@@ -10,7 +10,7 @@
 
 	function handleLogout() {
 		auth.logout();
-		toast.success('🎉 Successfully logged out!');
+		toast.success(' Successfully logged out!') ;
 	}
 
 	const navItems = [
@@ -85,7 +85,7 @@
 							class="block w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-red-500/20 hover:text-red-300 transition-all duration-200 text-shadow"
 							onclick={() => { handleLogout(); dropdownOpen = false; }}
 						>
-							🚪 Sign out
+							Sign out
 						</button>
 					</Dropdown>
 				{:else}
