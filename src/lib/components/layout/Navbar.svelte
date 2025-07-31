@@ -49,15 +49,14 @@
 			<!-- Right side actions -->
 			<div class="flex items-center space-x-4">
 				<!-- Theme Toggle -->
-				<Button variant="outline" size="sm" onclick={() => theme.toggle()}>
-					<span class="text-lg">🌙</span>
-				</Button>
+				<Button variant="outline" size="sm" placeholder="🌙" onclick={() => theme.toggle()}/>
+					
 
 				{#if $auth.isAuthenticated}
 					<!-- User Dropdown -->
 					<Dropdown bind:open={dropdownOpen}>
 						{#snippet trigger()}
-							<Button variant="outline" size="sm">
+							<Button variant="outline"  size="sm">
 								<img src={$auth.user.avatar} alt="Avatar" class="w-6 h-6 rounded-full mr-2 border border-red-400" />
 								<span class="text-shadow">{$auth.user.name}</span>
 								<svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,17 +80,17 @@
 							⚙️ Settings
 						</a>
 						<hr class="my-1 border-red-500/30" />
-						<button
+						<Button placeholder=" Sign out"
 							class="block w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-red-500/20 hover:text-red-300 transition-all duration-200 text-shadow"
 							onclick={() => { handleLogout(); dropdownOpen = false; }}
-						>
-							Sign out
-						</button>
+						/>
+							
+						
 					</Dropdown>
 				{:else}
-					<Button href="/login">
-						🔐 Sign In
-					</Button>
+					<Button href="/login" placeholder=" Sign In"/>
+					
+					
 				{/if}
 			</div>
 		</div>

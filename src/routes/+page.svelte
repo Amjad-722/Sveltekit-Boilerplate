@@ -132,12 +132,10 @@
 						<div>Warning Toast</div>
 					</div>
 				</Button>
-				<Button variant="outline" onclick={() => showToastDemo('info')} class="h-16 text-lg">
-					<div class="text-center">
-						<div class="text-2xl mb-1">💡</div>
-						<div>Info Toast</div>
-					</div>
-				</Button>
+				<Button variant="outline" placeholder="Info Toast"
+				 onclick={() => showToastDemo('info')} class="h-16 text-lg"/>
+					
+				
 			</div>
 		</Card>
 
@@ -151,12 +149,11 @@
 					Start with our stunning boilerplate and focus on what makes your project unique.
 				</p>
 				<div class="flex flex-col sm:flex-row justify-center gap-4">
-					<Button href="/components" size="lg" class=" py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
-						 Get Started Now
-					</Button>
-					<Button href="/about" variant="outline" size="lg" class="py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
-						 Learn More
-					</Button>
+					<Button href="/components" size="lg" placeholder=" Get Started Now" class=" py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg"/>
+					
+					<Button href="/about" placeholder="Learn More " variant="outline" size="lg" class="py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg"/>
+						 
+					
 				</div>
 			</div>
 		</div>
