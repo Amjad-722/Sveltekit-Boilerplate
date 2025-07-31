@@ -95,7 +95,7 @@
 				{#each features as feature}
 					<Card padding="lg" class="hover-glow">
 						<div class="text-center">
-							<div class="text-5xl mb-6 glow-red">{feature.icon}</div>
+							<div class="text-5xl mb-6 glow-red p-4 rounded-full ">{feature.icon}</div>
 							<h3 class="text-xl font-heading text-white text-shadow-red mb-4">
 								{feature.title}
 							</h3>
