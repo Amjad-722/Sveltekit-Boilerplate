@@ -2,6 +2,7 @@
 	import { toast } from '$lib/stores/toast.js';
 	import Button from '$lib/components/ui/Button.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
+	import plugin from 'vite-plugin-devtools-json';
 
 	function showToastDemo(type) {
 		const messages = {
@@ -37,12 +38,11 @@
 				Built with <span class="text-red-400 font-semibold">SvelteKit</span>, <span class="text-red-400 font-semibold">Vite</span>, and <span class="text-red-400 font-semibold">Tailwind CSS</span>.
 			</p>
 			<div class="flex flex-col sm:flex-row justify-center gap-6">
-				<Button href="/components" size="lg" class="transform hover:scale-110 py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
-					Explore Components
-				</Button>
-				<Button href="/dashboard" variant="outline" size="lg" class=" py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
-					View Dashboard
-				</Button>
+				<Button placeholder="Explore Components" href="/components" size="lg" class="py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg"/>
+					
+				
+				<Button placeholder="View Dashboard" href="/dashboard" variant="outline" size="lg" class=" py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg"/>
+					
 			</div>
 		</div>
 
@@ -79,14 +79,7 @@
 				<p class="text-gray-300 mb-6 text-shadow">
 					Success, error, warning, and info toasts with glass morphism and smooth animations.
 				</p>
-				<div class="flex space-x-2">
-					<Button size="sm" variant="success" onclick={() => showToastDemo('success')} class="flex-1">
-						✅ Success
-					</Button>
-					<Button size="sm" variant="danger" onclick={() => showToastDemo('error')} class="flex-1">
-						❌ Error
-					</Button>
-				</div>
+				
 			</Card>
 
 			<Card title="📱 Responsive Design" subtitle="Mobile-first approach">
