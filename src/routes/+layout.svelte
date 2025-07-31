@@ -4,6 +4,7 @@
 	import { theme } from '$lib/stores/theme.js';
 	import Navbar from '$lib/components/layout/Navbar.svelte';
 	import ToastContainer from '$lib/components/ui/ToastContainer.svelte';
+	import FloatingComponentButton from '$lib/components/ui/FloatingComponentButton.svelte';
 	import '../app.css';
 
 	onMount(() => {
@@ -26,3 +27,4 @@
 </div>
 
 <ToastContainer />
+<FloatingComponentButton />

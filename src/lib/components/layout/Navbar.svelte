@@ -5,8 +5,10 @@
 	import { toast } from '$lib/stores/toast.js';
 	import Button from '../ui/Button.svelte';
 	import Dropdown from '../ui/Dropdown.svelte';
+	import ComponentBrowser from '../ui/ComponentBrowser.svelte';
 
 	let dropdownOpen = false;
+	let componentBrowserOpen = $state(false);
 
 	function handleLogout() {
 		auth.logout();
@@ -18,7 +20,8 @@
 		{ href: '/components', label: 'Components' },
 		{ href: '/forms', label: 'Forms',  },
 		{ href: '/dashboard', label: 'Dashboard' },
-		{ href: '/about', label: 'About' }
+		{ href: '/about', label: 'About' },
+		{ href: '/ui', label: 'ui' }
 	];
 </script>
 
@@ -48,6 +51,15 @@
 
 			<!-- Right side actions -->
 			<div class="flex items-center space-x-4">
+				<!-- Component Browser -->
+				<Button 
+					variant="outline" 
+					size="sm" 
+					placeholder="🧩 Components" 
+					onclick={() => componentBrowserOpen = true}
+					class="hover-glow"
+				/>
+				
 				<!-- Theme Toggle -->
 				<Button variant="outline" size="sm" placeholder="🌙" onclick={() => theme.toggle()}/>
 					
@@ -55,15 +67,13 @@
 				{#if $auth.isAuthenticated}
 					<!-- User Dropdown -->
 					<Dropdown bind:open={dropdownOpen}>
-						{#snippet trigger()}
-							<Button variant="outline"  size="sm">
-								<img src={$auth.user.avatar} alt="Avatar" class="w-6 h-6 rounded-full mr-2 border border-red-400" />
-								<span class="text-shadow">{$auth.user.name}</span>
-								<svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-								</svg>
-							</Button>
-						{/snippet}
+						<Button variant="outline"  size="sm">
+							<img src={$auth.user.avatar} alt="Avatar" class="w-6 h-6 rounded-full mr-2 border border-red-400" />
+							<span class="text-shadow">{$auth.user.name}</span>
+							<svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</Button>
 						
 						<a
 							href="/profile"
@@ -97,7 +107,7 @@
 
 		<!-- Mobile Navigation -->
 		<div class="md:hidden border-t border-red-500/30 pt-4 pb-3">
-			<div class="flex flex-wrap gap-2">
+			<div class="flex flex-wrap gap-2 mb-3">
 				{#each navItems as item}
 					<a
 						href={item.href}
@@ -108,6 +118,26 @@
 					</a>
 				{/each}
 			</div>
+			
+			<!-- Mobile Component Browser Button -->
+			<div class="flex justify-center">
+				<Button 
+					variant="primary" 
+					size="sm" 
+					placeholder="🧩 Browse Components" 
+					onclick={() => componentBrowserOpen = true}
+					class="hover-glow w-full"
+				/>
+			</div>
 		</div>
 	</div>
 </nav>
+
+<!-- Component Browser -->
+<ComponentBrowser 
+	bind:open={componentBrowserOpen}
+	onComponentSelect={(component) => {
+		console.log('Selected component:', component);
+		toast.info(`🧩 Navigating to ${component.name} component`);
+	}}
+/>

@@ -1,14 +1,21 @@
 <script>
-	import { createEventDispatcher } from 'svelte';
-	
 	let {
+		items = [],
+		trigger = '',
+		position = 'bottom-left',
 		open = $bindable(false),
-		trigger,
-		children
+		children,
+		...props
 	} = $props();
 
-	const dispatch = createEventDispatcher();
-	let dropdownRef;
+	let dropdownRef = $state();
+
+	const positions = {
+		'bottom-left': 'top-full left-0 mt-2',
+		'bottom-right': 'top-full right-0 mt-2',
+		'top-left': 'bottom-full left-0 mb-2',
+		'top-right': 'bottom-full right-0 mb-2'
+	};
 
 	function toggleDropdown() {
 		open = !open;
@@ -24,38 +31,49 @@
 		}
 	}
 
-	function handleKeydown(event) {
-		if (event.key === 'Escape') {
-			closeDropdown();
+	$effect(() => {
+		if (open) {
+			document.addEventListener('click', handleClickOutside);
+			return () => document.removeEventListener('click', handleClickOutside);
 		}
-	}
-
-	function handleTriggerKeydown(event) {
-		if (event.key === 'Enter' || event.key === ' ') {
-			event.preventDefault();
-			toggleDropdown();
-		}
-	}
+	});
 </script>
 
-<svelte:window onclick={handleClickOutside} onkeydown={handleKeydown} />
-
-<div class="relative inline-block text-left" bind:this={dropdownRef}>
-	<div
-		role="button"
-		tabindex="0"
-		onclick={toggleDropdown}
-		onkeydown={handleTriggerKeydown}
-		aria-expanded={open}
-		aria-haspopup="true"
-	>
-		{@render trigger()}
+<div class="relative inline-block" bind:this={dropdownRef} {...props}>
+	<div onclick={toggleDropdown}>
+		{#if children}
+			{@render children()}
+		{:else}
+			<button class="inline-flex items-center justify-center">
+				{trigger}
+			</button>
+		{/if}
 	</div>
 
 	{#if open}
-		<div class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-xl glass shadow-red-xl border-2 border-red-500/30 focus:outline-none backdrop-blur-sm animate-in fade-in zoom-in duration-200" role="menu" aria-orientation="vertical">
-			<div class="py-2" role="none">
-				{@render children()}
+		<div class="absolute z-50 {positions[position]} min-w-48">
+			<div class="glass rounded-lg border border-gray-700 shadow-xl py-2">
+				{#each items as item}
+					{#if item.divider}
+						<hr class="my-2 border-gray-700" />
+					{:else}
+						<button
+							class="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800/50 hover:text-white transition-colors duration-200 flex items-center space-x-2"
+							onclick={() => {
+								item.action?.();
+								closeDropdown();
+							}}
+							disabled={item.disabled}
+							class:opacity-50={item.disabled}
+							class:cursor-not-allowed={item.disabled}
+						>
+							{#if item.icon}
+								<span class="text-lg">{item.icon}</span>
+							{/if}
+							<span>{item.label}</span>
+						</button>
+					{/if}
+				{/each}
 			</div>
 		</div>
 	{/if}
