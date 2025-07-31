@@ -127,14 +127,12 @@
 						Click-outside handling, keyboard navigation, and beautiful glass morphism effects included.
 					</p>
 					<Dropdown bind:open={dropdownOpen}>
-						{#snippet trigger()}
-							<Button variant="outline" class="hover-glow">
-								🎯 Open Dropdown
-								<svg class="ml-2 h-4 w-4 transition-transform duration-200" class:rotate-180={dropdownOpen} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-								</svg>
-							</Button>
-						{/snippet}
+						<Button variant="outline" class="hover-glow">
+							🎯 Open Dropdown
+							<svg class="ml-2 h-4 w-4 transition-transform duration-200" class:rotate-180={dropdownOpen} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+							</svg>
+						</Button>
 						
 						<button
 							class="block w-full text-left px-4 py-3 text-sm text-white hover:bg-red-500/20 hover:text-red-300 transition-all duration-200 text-shadow"

@@ -1,78 +1,64 @@
 <script>
-	import { createEventDispatcher } from 'svelte';
-	
 	let {
 		open = $bindable(false),
 		title = '',
 		size = 'md',
-		children
+		closable = true,
+		onClose = () => {},
+		children,
+		...props
 	} = $props();
-
-	const dispatch = createEventDispatcher();
 
 	const sizes = {
 		sm: 'max-w-md',
 		md: 'max-w-lg',
 		lg: 'max-w-2xl',
-		xl: 'max-w-4xl'
+		xl: 'max-w-4xl',
+		full: 'max-w-full mx-4'
 	};
 
-	function closeModal() {
-		open = false;
-		dispatch('close');
-	}
-
-	function handleKeydown(event) {
-		if (event.key === 'Escape') {
-			closeModal();
+	function handleBackdropClick(e) {
+		if (e.target === e.currentTarget && closable) {
+			open = false;
+			onClose();
 		}
 	}
 
-	function handleBackdropClick(event) {
-		if (event.target === event.currentTarget) {
-			closeModal();
+	function handleKeydown(e) {
+		if (e.key === 'Escape' && closable) {
+			open = false;
+			onClose();
 		}
 	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
-
 {#if open}
-	<div
-		class="fixed inset-0 z-50 overflow-y-auto"
-		aria-labelledby="modal-title"
+	<div 
+		class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+		onclick={handleBackdropClick}
+		onkeydown={handleKeydown}
 		role="dialog"
 		aria-modal="true"
+		{...props}
 	>
-		<div class="flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-			<!-- Background overlay with red tint -->
-			<div
-				class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
-				style="background-image: radial-gradient(circle at center, rgba(220, 38, 38, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);"
-				aria-hidden="true"
-				onclick={handleBackdropClick}
-			></div>
-
-			<!-- Center modal -->
-			<span class="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">&#8203;</span>
-
-			<div
-				class="inline-block transform overflow-hidden rounded-xl glass shadow-red-xl transition-all border-2 border-red-500/30 sm:my-8 sm:w-full sm:align-middle {sizes[size]} animate-in fade-in zoom-in duration-300"
-			>
-				<div class="glass px-6 pt-6 pb-4 sm:p-8 sm:pb-6">
-					<div class="sm:flex sm:items-start">
-						<div class="mt-3 w-full text-center sm:mt-0 sm:text-left">
-							{#if title}
-								<h3 class="text-xl font-bold leading-6 text-white text-shadow-red mb-4" id="modal-title">
-									{title}
-								</h3>
-							{/if}
-							<div class="mt-4">
-								{@render children()}
-							</div>
-						</div>
-					</div>
+		<div class="glass rounded-xl w-full {sizes[size]} shadow-red-xl transform transition-all duration-300">
+			{#if title || closable}
+				<div class="flex items-center justify-between p-6 border-b border-gray-700">
+					{#if title}
+						<h2 class="text-xl font-heading text-white">{title}</h2>
+					{/if}
+					{#if closable}
+						<button 
+							onclick={() => { open = false; onClose(); }}
+							class="text-gray-400 hover:text-white text-2xl"
+						>
+							×
+						</button>
+					{/if}
 				</div>
+			{/if}
+			<div class="p-6">
+				{@render children?.()}
 			</div>
 		</div>
 	</div>

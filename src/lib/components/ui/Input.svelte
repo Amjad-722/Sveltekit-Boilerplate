@@ -1,48 +1,50 @@
 <script>
 	let {
 		type = 'text',
-		placeholder = '',
 		value = $bindable(''),
+		placeholder = '',
 		label = '',
 		error = '',
 		disabled = false,
 		required = false,
-		id = '',
+		size = 'md',
+		variant = 'default',
 		...props
 	} = $props();
 
-	const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+	const sizes = {
+		sm: 'px-3 py-2 text-sm',
+		md: 'px-4 py-3 text-sm',
+		lg: 'px-5 py-4 text-base'
+	};
+
+	const variants = {
+		default: 'glass border-gray-600 focus:border-red-500 focus:ring-red-500/20',
+		outline: 'border-2 border-red-500/50 bg-black/30 focus:border-red-400 focus:ring-red-500/20'
+	};
 </script>
 
 <div class="space-y-2">
 	{#if label}
-		<label for={inputId} class="block text-sm font-semibold text-red-300 text-shadow">
+		<label class="block text-sm font-medium text-gray-300">
 			{label}
-			{#if required}
-				<span class="text-red-400 glow-red">*</span>
-			{/if}
+			{#if required}<span class="text-red-400">*</span>{/if}
 		</label>
 	{/if}
 	
 	<input
 		{type}
+		bind:value
 		{placeholder}
 		{disabled}
 		{required}
-		id={inputId}
-		bind:value
-		class="block w-full rounded-lg bg-gray-900/80 border-2 border-gray-700 shadow-lg text-white placeholder-gray-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/30 focus:bg-gray-900 transition-all duration-200 backdrop-blur-sm disabled:bg-gray-800 disabled:text-gray-500 disabled:border-gray-600"
-		class:border-red-400={error}
-		class:focus:border-red-400={error}
-		class:focus:ring-red-400={error}
-		class:shadow-red={error}
+		class="w-full rounded-lg {variants[variant]} {sizes[size]} text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+		class:border-red-500={error}
+		class:ring-red-500={error}
 		{...props}
 	/>
 	
 	{#if error}
-		<p class="text-sm text-red-400 text-shadow flex items-center">
-			<span class="mr-1">⚠️</span>
-			{error}
-		</p>
+		<p class="text-sm text-red-400">{error}</p>
 	{/if}
 </div>
