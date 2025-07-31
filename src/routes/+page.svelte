@@ -109,7 +109,7 @@
 		</div>
 
 		<!-- Interactive Demo Section -->
-		<Card title="🍞 Interactive Toast Demo" subtitle="Try our stunning notification system" padding="lg">
+		<Card title=" Interactive Toast Demo" subtitle="Try our stunning notification system" padding="lg">
 			<p class="text-gray-300 mb-8 text-shadow text-center">
 				Experience our beautiful toast notification system with glass morphism effects and smooth animations.
 			</p>
