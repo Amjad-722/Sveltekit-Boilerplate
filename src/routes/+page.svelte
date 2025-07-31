@@ -37,11 +37,11 @@
 				Built with <span class="text-red-400 font-semibold">SvelteKit</span>, <span class="text-red-400 font-semibold">Vite</span>, and <span class="text-red-400 font-semibold">Tailwind CSS</span>.
 			</p>
 			<div class="flex flex-col sm:flex-row justify-center gap-6">
-				<Button href="/components" size="lg" class="transform hover:scale-110">
-					🧩 Explore Components
+				<Button href="/components" size="lg" class="transform hover:scale-110 py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
+					Explore Components
 				</Button>
-				<Button href="/dashboard" variant="outline" size="lg" class="transform hover:scale-110">
-					📊 View Dashboard
+				<Button href="/dashboard" variant="outline" size="lg" class=" py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
+					View Dashboard
 				</Button>
 			</div>
 		</div>
@@ -109,7 +109,7 @@
 		</div>
 
 		<!-- Interactive Demo Section -->
-		<Card title="🍞 Interactive Toast Demo" subtitle="Try our stunning notification system" padding="lg">
+		<Card title=" Interactive Toast Demo" subtitle="Try our stunning notification system" padding="lg">
 			<p class="text-gray-300 mb-8 text-shadow text-center">
 				Experience our beautiful toast notification system with glass morphism effects and smooth animations.
 			</p>
@@ -151,11 +151,11 @@
 					Start with our stunning boilerplate and focus on what makes your project unique.
 				</p>
 				<div class="flex flex-col sm:flex-row justify-center gap-4">
-					<Button href="/components" size="lg" class="transform hover:scale-110">
-						🚀 Get Started Now
+					<Button href="/components" size="lg" class=" py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
+						 Get Started Now
 					</Button>
-					<Button href="/about" variant="outline" size="lg" class="transform hover:scale-110">
-						📚 Learn More
+					<Button href="/about" variant="outline" size="lg" class="py-2 px-4 rounded-full  transform hover:scale-110 gradient-red text-white shadow-red border border-red-400' : 'text-red-300 hover:text-white hover:bg-red-500/20 hover:shadow-lg">
+						 Learn More
 					</Button>
 				</div>
 			</div>
