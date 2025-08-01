@@ -41,18 +41,18 @@
 		</div>
 
 		<div class="space-y-16">
-			<Accordion/>
-			<!-- Buttons Section -->
+			
+			
 			<Card title="🔘 Buttons" subtitle="Various button styles and interactive states">
 				<div class="space-y-8">
 					<div>
 						<h4 class="text-lg font-heading text-white text-shadow mb-4">Button Variants</h4>
 						<div class="flex flex-wrap gap-4">
-							<Button variant="primary" class="hover-glow">🚀 Primary</Button>
-							<Button variant="secondary" class="hover-glow">⚙️ Secondary</Button>
-							<Button variant="danger" class="hover-glow">💥 Danger</Button>
-							<Button variant="success" class="hover-glow">✅ Success</Button>
-							<Button variant="outline" class="hover-glow">🔥 Outline</Button>
+							<Button size="sm" variant="primary" class="hover-glow" placeholder="Primary"/>
+							<Button size="sm"  variant="secondary" class="hover-glow" placeholder="Secondary"/>
+							<Button size="sm"  variant="danger" class="hover-glow" placeholder="Danger"/>
+							<Button size="sm"  variant="success" class="hover-glow" placeholder="Success"/>
+							<Button size="sm"  variant="outline" class="hover-glow" placeholder="Outline"/> 
 						</div>
 					</div>
 
