@@ -71,14 +71,14 @@
 							<Button {loading} onclick={simulateLoading} class="hover-glow">
 								{loading ? '⏳ Loading...' : '🎯 Click to Load'}
 							</Button>
-							<Button disabled>🚫 Disabled</Button>
-							<Button href="/about" class="hover-glow">🔗 Link Button</Button>
+							<Button disabled placeholder="🚫 Disabled"/>
+							<Button variant="primary" size="lg"  placeholder="🔗 Link Button"/>
 						</div>
 					</div>
 				</div>
 			</Card>
 
-			<!-- Inputs Section -->
+			
 			<Card title="📝 Input Fields" subtitle="Beautiful form inputs with validation">
 				<div class="space-y-6 max-w-lg">
 					<Input

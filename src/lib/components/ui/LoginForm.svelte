@@ -84,6 +84,7 @@
 		placeholder="Sign In"
 		class="w-full"
 	/>
+	
 
 	{#if showForgotPassword}
 		<div class="text-center">
