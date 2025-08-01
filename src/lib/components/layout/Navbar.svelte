@@ -51,14 +51,7 @@
 
 			<!-- Right side actions -->
 			<div class="flex items-center space-x-4">
-				<!-- Component Browser -->
-				<Button 
-					variant="outline" 
-					size="sm" 
-					placeholder="🧩 Components" 
-					onclick={() => componentBrowserOpen = true}
-					class="hover-glow"
-				/>
+				
 				
 				<!-- Theme Toggle -->
 				<Button variant="outline" size="sm" placeholder="🌙" onclick={() => theme.toggle()}/>

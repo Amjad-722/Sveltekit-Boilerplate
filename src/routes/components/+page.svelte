@@ -5,6 +5,7 @@
 	import Input from '$lib/components/ui/Input.svelte';
 	import Modal from '$lib/components/ui/Modal.svelte';
 	import Dropdown from '$lib/components/ui/Dropdown.svelte';
+	import Accordion from '$lib/components/ui/Accordion.svelte';
 
 	let showModal = false;
 	let dropdownOpen = false;
@@ -40,6 +41,7 @@
 		</div>
 
 		<div class="space-y-16">
+			<Accordion/>
 			<!-- Buttons Section -->
 			<Card title="🔘 Buttons" subtitle="Various button styles and interactive states">
 				<div class="space-y-8">
