@@ -1,9 +1,5 @@
 <script>
-	let {
-		items = [],
-		multiple = false,
-		...props
-	} = $props();
+	let { items = [], multiple = false, ...props } = $props();
 
 	let openItems = $state(new Set());
 
@@ -21,28 +17,36 @@
 	}
 </script>
 
-<div class="space-y-2" {...props}>
+<div class="space-y-4 " {...props}>
 	{#each items as item, index}
-		<div class="glass rounded-lg border border-gray-700 overflow-hidden">
+		<div class="glass overflow-hidden rounded-lg border border-gray-700 ">
 			<button
-				class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-800/50 transition-colors duration-200"
+				class="flex w-full items-center justify-between px-6 py-4 pt-4 text-left transition-colors duration-200 hover:bg-gray-800/50"
 				onclick={() => toggleItem(index)}
 			>
 				<span class="font-medium text-white">{item.title}</span>
-				<svg 
-					class="w-5 h-5 text-gray-400 transform transition-transform duration-200"
+				<svg
+					class="h-5 w-5 transform text-gray-400 transition-transform duration-200"
 					class:rotate-180={openItems.has(index)}
-					fill="none" 
-					stroke="currentColor" 
+					fill="none"
+					stroke="currentColor"
 					viewBox="0 0 24 24"
 				>
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 9l-7 7-7-7"
+					/>
 				</svg>
 			</button>
-			
+
 			{#if openItems.has(index)}
-				<div class="px-6 pb-4 text-gray-300 border-t border-gray-700">
-					{@render item.content()}
+				<div class="border-t border-gray-700 px-6 pt-4 text-gray-300">
+					{#if typeof item.content === 'function'}
+
+						{@render item.content()}
+					{/if}
 				</div>
 			{/if}
 		</div>

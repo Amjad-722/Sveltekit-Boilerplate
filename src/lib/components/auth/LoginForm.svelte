@@ -46,7 +46,7 @@
 	}
 </script>
 
-<Card title="🔐 Sign In" subtitle="Welcome back! Please sign in to your account." padding="lg">
+<Card title=" Sign In" subtitle="Welcome back! Please sign in to your account." padding="lg">
 	<form on:submit|preventDefault={handleSubmit} class="space-y-6">
 		<Input
 			type="email"
