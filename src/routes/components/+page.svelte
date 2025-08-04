@@ -125,9 +125,9 @@
 						Experience our beautiful modal dialogs with backdrop blur, smooth animations, and
 						keyboard navigation.
 					</p>
-					<Button onclick={() => (showModal = true)} class="hover-glow">
-						🎭 Open Stunning Modal
-					</Button>
+					<Button variant="primary" onclick={() => (showModal = true)} class="hover-glow" placeholder="🎭 Open Stunning Modal"/>
+						
+					
 				</div>
 			</Card>showModal
 
@@ -232,7 +232,6 @@
 				</div>
 			</Card>
 
-			<!-- Toast Notifications -->
 			<Card
 				title="🍞 Toast Notifications"
 				subtitle="Beautiful notification system with glass effects"
@@ -290,7 +289,6 @@
 	</div>
 </div>
 
-<!-- Demo Modal -->
 <Modal bind:open={showModal} title="🎭 Stunning Modal Example" size="md">
 	<div class="space-y-6">
 		<p class="text-shadow text-gray-300">
