@@ -86,7 +86,6 @@
 			</div>
 		</Card>
 
-		<!-- Features Grid -->
 		<div class="mt-20">
 			<h2 class="text-4xl font-heading text-white text-shadow-red text-center mb-16">
 				✨ Key <span class="text-red-400">Features</span>
@@ -108,7 +107,6 @@
 			</div>
 		</div>
 
-		<!-- Tech Stack -->
 		<div class="mt-20">
 			<h2 class="text-4xl font-heading text-white text-shadow-red text-center mb-16">
 				🛠️ Technology <span class="text-red-400">Stack</span>
@@ -132,7 +130,6 @@
 			</div>
 		</div>
 
-		<!-- Getting Started -->
 		<div class="mt-20">
 			<Card title="🚀 Getting Started" subtitle="How to use this stunning boilerplate" padding="lg">
 				<div class="space-y-8">
