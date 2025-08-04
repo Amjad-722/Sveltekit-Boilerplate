@@ -43,8 +43,7 @@
 
 			{#if openItems.has(index)}
 				<div class="border-t border-gray-700 px-6 pt-4 text-gray-300">
-					{#if typeof item.content === 'function'}
-
+					{#if content}
 						{@render item.content()}
 					{/if}
 				</div>

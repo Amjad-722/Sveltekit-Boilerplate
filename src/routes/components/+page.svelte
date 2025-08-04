@@ -119,7 +119,6 @@
 				</div>
 			</Card>
 
-			<!-- Modal Section -->
 			<Card title="🪟 Modal Dialogs" subtitle="Stunning modal dialogs with glass morphism">
 				<div class="space-y-6">
 					<p class="text-shadow text-gray-300">
@@ -192,7 +191,6 @@
 				<Accordion items={faqItems} class="mx-auto max-w-2xl pt-4" multiple={true} />
 			</Card>
 
-			<!-- Cards Section -->
 			<Card title="🃏 Card Containers" subtitle="Flexible card layouts with glass morphism">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 					<Card title="✨ Simple Card" padding="md">
