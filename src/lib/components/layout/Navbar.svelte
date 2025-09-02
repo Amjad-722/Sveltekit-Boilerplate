@@ -7,7 +7,7 @@
 	import Dropdown from '../ui/Dropdown.svelte';
 	import ComponentBrowser from '../ui/ComponentBrowser.svelte';
 
-	let dropdownOpen = false;
+	let dropdownOpen = $state(false);
 	let componentBrowserOpen = $state(false);
 
 	function handleLogout() {
