@@ -28,7 +28,6 @@
 <nav class="glass border-b-2 border-red-500/30 shadow-red-lg backdrop-blur-md sticky top-0 z-40">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center h-16">
-			<!-- Logo -->
 			<div class="flex items-center">
 				<a href="/" class="flex items-center space-x-3 group">
 					<span class="text-xl font-bold text-white text-shadow-red">
@@ -37,7 +36,6 @@
 				</a>
 			</div>
 
-			<!-- Desktop Navigation -->
 			<div class="hidden md:flex items-center space-x-2">
 				{#each navItems as item}
 					<a
@@ -49,16 +47,13 @@
 				{/each}
 			</div>
 
-			<!-- Right side actions -->
 			<div class="flex items-center space-x-4">
 				
 				
-				<!-- Theme Toggle -->
 				<Button variant="outline" size="sm" placeholder="🌙" onclick={() => theme.toggle()}/>
 					
 
 				{#if $auth.isAuthenticated}
-					<!-- User Dropdown -->
 					<Dropdown bind:open={dropdownOpen}>
 						<Button variant="outline"  size="sm">
 							<img src={$auth.user.avatar} alt="Avatar" class="w-6 h-6 rounded-full mr-2 border border-red-400" />
@@ -98,7 +93,6 @@
 			</div>
 		</div>
 
-		<!-- Mobile Navigation -->
 		<div class="md:hidden border-t border-red-500/30 pt-4 pb-3">
 			<div class="flex flex-wrap gap-2 mb-3">
 				{#each navItems as item}
@@ -112,7 +106,6 @@
 				{/each}
 			</div>
 			
-			<!-- Mobile Component Browser Button -->
 			<div class="flex justify-center">
 				<Button 
 					variant="primary" 
