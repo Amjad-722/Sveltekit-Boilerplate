@@ -1027,7 +1027,7 @@
 											placeholder="Warning Toast"
 										/>
 										<Button
-											variant="outline"
+											variant="primary"
 											size="sm"
 											onclick={() => toast.info('💡 Info toast!')}
 											placeholder="Info Toast"
@@ -1119,8 +1119,9 @@
 								variant="outline"
 								size="sm"
 								onclick={() => (showDrawer = true)}
-								placeholder="🗂️ Open Drawer"
-							/>
+								
+							>
+						Info Toast  </Button>
 							<Dropdown bind:open={dropdownOpen}>
 								<Button variant="outline" size="sm" placeholder="📋 Dropdown" />
 								<div class="p-2">
