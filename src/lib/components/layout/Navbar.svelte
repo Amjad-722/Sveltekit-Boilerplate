@@ -32,7 +32,7 @@
 			<div class="flex items-center">
 				<a href="/" class="flex items-center space-x-3 group">
 					<span class="text-xl font-bold text-white text-shadow-red">
-						Svelte Kit
+						SvelteKit
 					</span>
 				</a>
 			</div>

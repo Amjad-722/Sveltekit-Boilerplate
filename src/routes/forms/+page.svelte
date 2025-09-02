@@ -258,7 +258,7 @@
 						<Input type="date" label="Date Input" />
 						<Input type="time" label="Time Input" />
 						<Input type="datetime-local" label="DateTime Input" />
-						<Input type="range" label="Range Input"  className="p-2"/>
+						<Input type="range" label="Range Input" />
 					</div>
 				</div>
 				
