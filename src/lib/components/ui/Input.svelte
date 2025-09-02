@@ -9,6 +9,8 @@
 		required = false,
 		size = 'md',
 		variant = 'default',
+		className = '',
+		// Spread remaining	
 		...props
 	} = $props();
 
@@ -38,7 +40,7 @@
 		{placeholder}
 		{disabled}
 		{required}
-		class="w-full rounded-lg {variants[variant]} {sizes[size]} text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+		class="w-full rounded-lg {variants[variant]} {className} {sizes[size]} text-white placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
 		class:border-red-500={error}
 		class:ring-red-500={error}
 		{...props}

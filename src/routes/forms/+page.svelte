@@ -252,13 +252,13 @@
 						<Input type="tel" label="Phone Input" placeholder="+1 (555) 123-4567" />
 					</div>
 					
-					<div class="space-y-6">
+					<div class="space-y-6 p-2">
 						<h4 class="text-lg font-heading text-white text-shadow-red">🔢 Number & Date Inputs</h4>
 						<Input type="number" label="Number Input" placeholder="123" />
 						<Input type="date" label="Date Input" />
 						<Input type="time" label="Time Input" />
 						<Input type="datetime-local" label="DateTime Input" />
-						<Input type="range" label="Range Input" />
+						<Input type="range" label="Range Input"  className="p-2"/>
 					</div>
 				</div>
 				
