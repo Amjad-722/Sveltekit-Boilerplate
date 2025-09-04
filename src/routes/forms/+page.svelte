@@ -246,10 +246,10 @@
 					<div class="space-y-6">
 						<h4 class="text-lg font-heading text-white text-shadow-red">✨ Text Inputs</h4>
 						<Input label="Text Input" placeholder="Regular text input" />
-						<Input type="email" label="Email Input" placeholder="email@example.com" />
+						<Input type="email" label="Email Input" placeholder="@example.com" />
 						<Input type="password" label="Password Input" placeholder="Enter secure password" />
-						<Input type="url" label="URL Input" placeholder="https://example.com" />
-						<Input type="tel" label="Phone Input" placeholder="+1 (555) 123-4567" />
+						<Input type="url" label="URL Input" placeholder="aliamjadnagari@gmail.com" />
+						<Input type="tel" label="Phone Input" placeholder="" />
 					</div>
 					
 					<div class="space-y-6 p-2">
