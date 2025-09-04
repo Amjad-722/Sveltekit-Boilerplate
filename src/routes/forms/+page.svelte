@@ -249,7 +249,7 @@
 						<Input type="email" label="Email Input" placeholder="@example.com" />
 						<Input type="password" label="Password Input" placeholder="Enter secure password" />
 						<Input type="url" label="URL Input" placeholder="aliamjadnagari@gmail.com" />
-						<Input type="tel" label="Phone Input" placeholder="" />
+						<Input type="tel" label="Phone Input" placeholder="03109305472" />
 					</div>
 					
 					<div class="space-y-6 p-2">
